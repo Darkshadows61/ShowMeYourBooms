@@ -8,13 +8,14 @@
         <title>Show Me Your Booms</title>
     </head>
     <header>
-        <nav>Top Nav
+        <nav id="topNav">
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/login">Login</a></li>
-                    <li><a href="#">Profile</a></li>
+                    <li><a href="/user">Profile</a></li>
                     <li><a href="#">Logout</a></li>
                 <li><a href="/fireworks">Fireworks</a></li>
+                <li><a href="/cart">Cart</a></li>
                 <li><a href="/about">About</a></li>
                 <li><a href="/contact">Contact</a></li>
             </ul>
@@ -24,17 +25,26 @@
         <h1>Show Me Your Booms</h1>
         <section>
             <h4>Fireworks</h4>
-            <ul>
-                <li><img src="/style/images/RedBlue1.gif"></li>
+            <ul id="master">
+                <li>
+                    <img src="/style/images/RedBlue1.gif">
+                    <span>Firework 1</span>
+                </li>
                 <li><img src="/style/images/YellowRedBlue1.gif">Firework 2</li>
                 <li><img src="/style/images/GreenBlue1.gif">Firework 3</li>
+            </ul>
+            <ul id="master">
                 <li><img src="/style/images/RedYellow1.gif">Firework 4</li>
                 <li><img src="/style/images/GreenYellow1.gif">Firework 5</li>
                 <li><img src="/style/images/WhiteYellow1.gif">Firework 6</li>
-                <li><img src="/style/images/BlueYellowSaturn.gif">Firework 7</li>
-                <li><img src="/style/images/RedBlue1.gif">Firework 8</li>
-                <li><img src="/style/images/RedBlue1.gif">Firework 9</li>
-                <li><img src="/style/images/RedBlue1.gif">Firework 10</li>
+            </ul>
+            <ul id="master">
+                <li><img src="/style/images/BlueYellowSaturn1.gif">Firework 7</li>
+                <li><img src="/style/images/BluePinkYellow1.gif">Firework 8</li>
+                <li><img src="/style/images/GreenPink1.gif">Firework 9</li>
+            </ul>
+            <ul id="master">    
+                <li><img src="/style/images/Finale.gif">Firework 10</li>
             </ul>
         </section>
         <section>
@@ -42,6 +52,16 @@
         </section>
     </body>
     </footer>
-        <nav>Bottom Nav<nav>
+    <nav id="bottomNav">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/login">Login</a></li>
+                <li><a href="/user">Profile</a></li>
+                <li><a href="#">Logout</a></li>
+            <li><a href="/fireworks">Fireworks</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    <nav>
     </footer>
 </html>

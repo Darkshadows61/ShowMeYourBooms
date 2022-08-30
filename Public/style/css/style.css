@@ -8,3 +8,16 @@
     justify-content: space-evenly;
     border: 5px red solid;
 }
+#master{
+    list-style-type: none;
+    width: 100%;
+    display: flex;
+}
+#master li{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: space-between;
+}
