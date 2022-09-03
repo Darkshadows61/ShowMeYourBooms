@@ -1,58 +1,54 @@
 // Header
 const express = require('express')
 const app = express()
-const PORT = 8000
+const mongoose = require('mongoose')
+const dotenv = require('dotenv')
+const passport = require('passport')
+const session = require('express-session')
+const flash = require('express-flash')
+const logger = require('morgan')
+const connectDB = require('./config/database')
+const mainRoutes = require('./routes/main')
+const todoRoutes = require('./routes/todos')
+const logoutRoutes = require('./routes/logout')
+const fireworksRoutes = require('./routes/fireworks')
 const cors = require('cors')
-const { ObjectId } = require('mongodb')
 const MongoClient = require('mongodb').MongoClient
-require('dotenv').config()
 
-// Port
-app.listen(process.env.PORT || PORT, (req,res) => {
-    console.log(`Listening on ${PORT}`)
-})
+// Load Config
+dotenv.config({path: './config/.env'})
 
-// Middleware
-app.use(cors())
+// Passport Config
+require('./config/passport')(passport)
+
+// MongoDB
+connectDB()
+
+app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
-app.set('view engine', 'ejs')
+app.use(logger('dev'))
 
-// Mongo
-let db,
-    dbConnectionStr = process.env.DB_STRING,
-    dbName = 'fireworks'
+// Passport Express Session
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true,
+}))
 
-    //MongoDB and CRUD
-MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true })
-.then(client => {
-    console.log('Connection to MongoDB Complete. Ready to Boom')
-    const db = client.db(dbName)//Database Name
-    const master = db.collection('masterCollection')
-            
-    // Home
-    app.get('/', (req,res)=>{
-        res.render('index.ejs')
-    })
-    // Login
-    app.get('/login', (req,res)=>{
-        res.render('login.ejs')
-    })
-    // Profile
-    app.get('/user', (req,res)=>{
-        res.render('user.ejs')
-    })
-    // Fireworks Collection
-    app.get('/fireworks', (req,res)=>{
-        res.render('fireworks.ejs')
-    })
-    // About
-    app.get('/about', (req,res)=>{
-        res.render('about.ejs')
-    })
-    // Contact
-    app.get('/contact', (req,res)=>{
-        res.render('contact.ejs')
-    })
+// Passport Middleware
+app.use(passport.initialize())
+app.use(passport.session())
+
+app.use(flash())
+
+// Routes
+app.use('/', mainRoutes)
+app.use('/todos', todoRoutes)
+//app.use('/fireworks', fireworksRoutes)
+
+// Port
+app.listen(process.env.PORT || PORT, (req,res) => {
+    console.log(`Listening on ${process.env.PORT}`)
 })
