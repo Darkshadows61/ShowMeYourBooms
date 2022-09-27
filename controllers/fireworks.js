@@ -1,54 +1,41 @@
-// This one needs updating for fireworks!!
-
-const Todo = require('../models/Fireworks')
+const Fireworks = require('../models/usershow')
 
 module.exports = {
-    getTodos: async (req,res)=>{
+    getUserShow: async (req,res)=>{
         console.log(req.user)
         try{
-            const todoItems = await Todo.find({userId:req.user.id})
-            const itemsLeft = await Todo.countDocuments({userId:req.user.id,completed: false})
-            res.render('todos.ejs', {todos: todoItems, left: itemsLeft, user: req.user})
+            const userShowList = await Fireworks.find({userId:req.user.id})
+            const userShowItems = await Fireworks.countDocuments({userId:req.user.id, showName: req.body.userShowName})
+            res.render('fireworks.ejs', {userShows: userShowItems, user: req.user})
         }catch(err){
             console.log(err)
         }
     },
-    createTodo: async (req, res)=>{
+    addUserShowItem: async (req, res)=>{
         try{
-            await Todo.create({todo: req.body.todoItem, completed: false, userId: req.user.id})
-            console.log('Todo has been added!')
-            res.redirect('/todos')
+            await Fireworks.create({showName: req.body.userShowName, userId: req.user.id})
+            console.log('Firework has been added!')
+            res.redirect('/fireworks')
         }catch(err){
             console.log(err)
         }
     },
-    markComplete: async (req, res)=>{
-        try{
-            await Todo.findOneAndUpdate({_id:req.body.todoIdFromJSFile},{
-                completed: true
-            })
-            console.log('Marked Complete')
-            res.json('Marked Complete')
-        }catch(err){
-            console.log(err)
-        }
-    },
-    markIncomplete: async (req, res)=>{
-        try{
-            await Todo.findOneAndUpdate({_id:req.body.todoIdFromJSFile},{
-                completed: false
-            })
-            console.log('Marked Incomplete')
-            res.json('Marked Incomplete')
-        }catch(err){
-            console.log(err)
-        }
-    },
-    deleteTodo: async (req, res)=>{
-        console.log(req.body.todoIdFromJSFile)
+    //previewShow: async (req, res)=>{
+        //try{
+            //await Todo.findOneAndUpdate({_id:req.body.todoIdFromJSFile},{
+                //completed: true
+            //})
+            //console.log('Marked Complete')
+            //res.json('Marked Complete')
+        //}catch(err){
+            //console.log(err)
+        //}
+    //},
+    deleteUserShowItem: async (req, res)=>{
+        console.log(req.body.IdFromJSFile)
         try{
             await Todo.findOneAndDelete({_id:req.body.todoIdFromJSFile})
-            console.log('Deleted Todo')
+            console.log('Deleted ShowItem')
             res.json('Deleted It')
         }catch(err){
             console.log(err)

@@ -24,7 +24,29 @@
     <body>
         <h1>Show Me Your Booms</h1>
         <section>
+            <h1>Your Show</h1>
+            <ul>
+            <% usershows.forEach( el => { %>
+                    <li class='Item' data-id='<%=el._id%>'>
+                        <span class='name'></span>
+                        <span class='del'> Delete </span>
+                    </li>
+            <% }) %>    
+            </ul>
+        
+            <h2><%= user.userName %> has <%= left %> things left to do.</h2>
+        
+            <form action="/usershow/addUserShowItem" method='POST'>
+                <input type="text" placeholder="Enter Show Name" name='userShowName'>
+                <input tpye="text" placeholder="Enter Firework Name" name="userShowItem">
+                <input type="submit">
+            </form>
+        
+            <a href="/logout">Logout</a>
+        </section>
+        <section>
             <h4>Fireworks</h4>
+            
             <ul id="master">
                 <li>
                     <img src=/style/images/BluePinkYellow1.gif>
@@ -50,6 +72,7 @@
         <section>
             
         </section>
+        <script src="js/main.js"></script>
     </body>
     </footer>
     <nav id="bottomNav">

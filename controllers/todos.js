@@ -1,5 +1,3 @@
-// This one needs updating for fireworks!!
-
 const Todo = require('../models/Todo')
 
 module.exports = {

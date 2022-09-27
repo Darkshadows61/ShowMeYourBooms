@@ -3,7 +3,7 @@ const router = express.Router()
 const fireworksController = require('../controllers/fireworks') 
 const { ensureAuth } = require('../middleware/auth')
 
-router.get('/', ensureAuth, fireworksController.getFireworks)
+router.get('/', ensureAuth, fireworksController.getUserShow)
 
 //router.post('/createTodo', todosController.createTodo)
 

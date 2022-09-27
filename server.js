@@ -46,7 +46,10 @@ app.use(flash())
 // Routes
 app.use('/', mainRoutes)
 app.use('/todos', todoRoutes)
-//app.use('/fireworks', fireworksRoutes)
+app.use('/fireworks', fireworksRoutes)
+app.use('/about', aboutRoutes)
+app.use('/contact', contactRoutes)
+app.use('/cart', cartRoutes)
 
 // Port
 app.listen(process.env.PORT || PORT, (req,res) => {
