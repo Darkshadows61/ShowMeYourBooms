@@ -1,11 +1,11 @@
 const mongoose = require('mongoose')
 
-const UserShowSchema = new mongoose.Schema({
+const UserShowsSchema = new mongoose.Schema({
   showName: {
     type: String,
     required: true,
   },
-  showItem: {
+  fireworkID: {
     type: String,
     required: true,
   },
@@ -15,4 +15,4 @@ const UserShowSchema = new mongoose.Schema({
   }
 })
 
-module.exports = mongoose.model('UserShow', UserShowSchema)
+module.exports = mongoose.model('UserShows', UserShowSchema)

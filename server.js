@@ -11,12 +11,12 @@ const connectDB = require('./config/database')
 const mainRoutes = require('./routes/main')
 const todoRoutes = require('./routes/todos')
 const userProfileRoutes = require('./routes/userProfile')
-const logoutRoutes = require('./routes/logout')
+const userShowsRoutes = require('./routes/userShows')
 const fireworksRoutes = require('./routes/fireworks')
 const aboutRoutes = require('./routes/about')
 const contactRoutes = require('./routes/contact')
 const cartRoutes = require('./routes/cart')
-const cors = require('cors')
+
 const MongoClient = require('mongodb').MongoClient
 
 // Load Config
@@ -50,6 +50,7 @@ app.use(flash())
 // Routes
 app.use('/', mainRoutes)
 app.use('/userProfile', userProfileRoutes)
+app.use('/userShows', userShowsRoutes)
 app.use('/todos', todoRoutes)
 app.use('/fireworks', fireworksRoutes)
 app.use('/about', aboutRoutes)

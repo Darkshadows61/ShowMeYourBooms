@@ -1,4 +1,4 @@
-const Fireworks = require('../models/usershow')
+const Fireworks = require('../models/userShows')
 
 module.exports = {
     getUserShow: async (req,res)=>{
