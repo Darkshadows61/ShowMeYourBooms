@@ -1,10 +1,10 @@
 const express = require('express')
 const router = express.Router()
 const authController = require('../controllers/auth') 
-const aboutController = require('../controllers/about')
+const userProfileController = require('../controllers/userProfile')
 const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
-router.get('/', aboutController.getIndex)
+router.get('/', ensureAuth, userProfileController.getIndex)
 router.get('/login', authController.getLogin)
 router.post('/login', authController.postLogin)
 router.get('/logout', authController.logout)
