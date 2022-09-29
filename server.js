@@ -10,13 +10,7 @@ const logger = require('morgan')
 const connectDB = require('./config/database')
 const mainRoutes = require('./routes/main')
 const todoRoutes = require('./routes/todos')
-const userProfileRoutes = require('./routes/userProfile')
-const userShowsRoutes = require('./routes/userShows')
 const fireworksRoutes = require('./routes/fireworks')
-const aboutRoutes = require('./routes/about')
-const contactRoutes = require('./routes/contact')
-const cartRoutes = require('./routes/cart')
-
 const MongoClient = require('mongodb').MongoClient
 
 // Load Config
@@ -49,13 +43,13 @@ app.use(flash())
 
 // Routes
 app.use('/', mainRoutes)
-app.use('/userProfile', userProfileRoutes)
-app.use('/userShows', userShowsRoutes)
+app.use('/userProfile', mainRoutes)
+app.use('/userShows', mainRoutes)
 app.use('/todos', todoRoutes)
 app.use('/fireworks', fireworksRoutes)
-app.use('/about', aboutRoutes)
-app.use('/contact', contactRoutes)
-app.use('/cart', cartRoutes)
+app.use('/about', mainRoutes)
+app.use('/contact', mainRoutes)
+app.use('/cart', mainRoutes)
 
 // Port
 app.listen(process.env.PORT || PORT, (req,res) => {
