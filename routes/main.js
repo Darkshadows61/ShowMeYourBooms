@@ -11,7 +11,7 @@ const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
 router.get('/', homeController.getIndex)
 router.get('/userProfile', ensureAuth, userProfileController.getIndex)
-router.get('/userShows', ensureAuth, userShowsController.getIndex)
+router.get('/userShows', ensureAuth, userShowsController.getUserShows)
 router.get('/about', aboutController.getIndex)
 router.get('/contact', contactController.getIndex)
 router.get('/cart', cartController.getIndex)

@@ -25,11 +25,24 @@
     </header>
     <body>
         <h1>USER PROFILE</h1>
-        <p>
-            <ul>
-                <li>-User Show</li>
- 
-            </ul>
-        </p>
+        <h1>User Shows</h1>
+
+        <ul>
+        <% userShows.forEach( el => { %>
+                <li class='showName' data-id='<%=el._id%>'>
+                    <span><%= el.showName %></span>
+                    <span><%= el.fireworkID %></span>
+                    <span class='del'> Delete </span>
+                </li>
+        <% }) %>    
+        </ul>
+
+        <form action="/userShows/createUserShow" method='POST'>
+            <input type="text" placeholder="Show Name" name='showName'>
+            <input type="text" placeholder="Firework by ID" name='fireworkID'>
+            <input type="submit">
+        </form>
+
+        <script src="js/main.js"></script>
     </body>
 </html>
