@@ -13,7 +13,7 @@ module.exports = {
     },
     createUserShow: async (req, res)=>{
         try{
-            await UserShow.create({showName: req.body.showName, fireworkID: req.body.fireworkID, userId: req.user.id})
+            await UserShow.create({showName: req.body.showName, fireworkID: 0, userId: req.user.id})
             console.log('Show has been added!')
             res.redirect('/userShows')
         }catch(err){
@@ -26,6 +26,15 @@ module.exports = {
             await UserShow.findOneAndDelete({_id:req.body.userShowIdFromJSFile})
             console.log('Deleted User Show')
             res.json('Deleted It')
+        }catch(err){
+            console.log(err)
+        }
+    },
+    addFireworkToShow: async (req, res)=>{
+        try{
+            await UserShow.create({showName: req.body.showName, fireworkID: req.body.fireworkId, userId: req.user.id})
+            console.log('Show has been added!')
+            res.redirect('/userShows')
         }catch(err){
             console.log(err)
         }

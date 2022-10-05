@@ -7,6 +7,8 @@ router.get('/userShows', ensureAuth, userShowsController.getUserShows)
 
 router.post('/createUserShow', userShowsController.createUserShow)
 
+router.post('/addFireworkToShow', userShowsController.addFireworkToShow)
+
 //router.put('/markComplete', userShowsController.markComplete)
 
 //router.put('/markIncomplete', userShowsController.markIncomplete)

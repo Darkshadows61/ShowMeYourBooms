@@ -27,6 +27,52 @@
         <h1>USER PROFILE</h1>
         <h1>User Shows</h1>
 
+        <h2>BREAK</h2>
+        <form action="/userShows/createUserShow" method='POST'>
+            <input type="text" placeholder="Show Name" name='showName'>
+            <input type="submit">
+        </form>
+
+        <h2>BREAK</h2>
+        <h3>Add to show</h3>
+        <form action="/userShows/addFireworkToShow" method='POST'>
+                <label>My Shows</label>
+                <select id="Show Name" name="showName">
+                    <% for (let i=0; i< userShows.length; i++) { %> 
+                        <% if (userShows[i].fireworkID == 0) { %>
+                    <option><%= userShows[i].showName %></option>
+                        <% } %>
+                    <% } %>
+                </select>
+            <label>Fireworks</label>
+                <select id="firework" name="fireworkId">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+            </select>
+            <input type="submit">
+        </form> 
+
+        <h2>BREAK</h2>
+        <ul>
+            <% for (let i=0; i < userShows.length; i++) { %>
+                <% if (userShows[i].fireworkID == 1) { %>
+                    <img src=/style/images/BluePinkYellow1.gif>
+                <% } %>
+                <% if (userShows[i].fireworkID == 2) { %>
+                    <img src="/style/images/YellowRedBlue1.gif">
+                <% } %>
+            <% } %>
+        </ul>
+
+        <h2>BREAK</h2>
         <ul>
         <% userShows.forEach( el => { %>
                 <li class='showName' data-id='<%=el._id%>'>
@@ -35,13 +81,18 @@
                     <span class='del'> Delete </span>
                 </li>
         <% }) %>    
+        </ul>       
+
+        <h2>BREAK</h2>
+        <ul>
+            <% for (let i=0; i < userShows.length; i++) { %>
+                <% if (userShows[i].showName = userShows[i].showName) { %>
+                    <span><%= userShows[i].fireworkID %></span>
+                    <% } %>
+
+            <% } %>  
         </ul>
 
-        <form action="/userShows/createUserShow" method='POST'>
-            <input type="text" placeholder="Show Name" name='showName'>
-            <input type="text" placeholder="Firework by ID" name='fireworkID'>
-            <input type="submit">
-        </form>
 
         <script src="js/main.js"></script>
     </body>
