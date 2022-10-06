@@ -21,14 +21,6 @@ module.exports = {
             console.log(err)
         }
     },
-    getSingleShow: async (req,res)=>{
-        console.log(req.user)
-        try{
-            res.render('userShows.ejs', {user: req.user})
-        }catch(err){
-            console.log(err)
-        }
-    },
     createUserShow: async (req, res)=>{
         try{
             await UserShow.create({showName: req.body.showName, fireworkID1: req.body.fireworkID1, fireworkID2: req.body.fireworkID2, fireworkID3: req.body.fireworkID3, fireworkID4: req.body.fireworkID4, fireworkID5: req.body.fireworkID5, fireworkID6: req.body.fireworkID6, fireworkID7: req.body.fireworkID7, fireworkID8: req.body.fireworkID8, fireworkID9: req.body.fireworkID9, fireworkID10: req.body.fireworkID10, userId: req.user.id})

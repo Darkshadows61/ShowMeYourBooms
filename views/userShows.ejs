@@ -23,130 +23,587 @@
             </ul>
         </nav>
     </header>
+
     <body>
         <h1>USER PROFILE</h1>
-        <h1>User Shows</h1>
 
-        <h2>BREAK</h2>
-        <form action="/userShows/createUserShow" method='POST'>
-            <input type="text" placeholder="Show Name" name='showName'>
-            <input type="text" placeholder="Opener" name='fireworkID1'>
-            <input type="text" placeholder="Firework 2" name='fireworkID2'>
-            <input type="text" placeholder="Firework 3" name='fireworkID3'>
-            <input type="text" placeholder="Firework 4" name='fireworkID4'>
-            <input type="text" placeholder="Firework 5" name='fireworkID5'>
-            <input type="text" placeholder="Firework 6" name='fireworkID6'>
-            <input type="text" placeholder="Firework 7" name='fireworkID7'>
-            <input type="text" placeholder="Firework 8" name='fireworkID8'>
-            <input type="text" placeholder="Firework 9" name='fireworkID9'>
-            <input type="text" placeholder="Closer" name='fireworkID10'>
-            <input type="submit">
-        </form>
+        <h3>Create Show</h3>
+            <form action="/userShows/createUserShow" method='POST'>
+                <input type="text" placeholder="Show Name" name='showName'>
+                    <label>Show Opener</label>
+                        <select id="firework" name="fireworkID1">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                    <label>Firework 2</label>
+                        <select id="firework" name="fireworkID2">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>                
+                    <label>Firework 3</label>
+                    <select id="firework" name="fireworkID3">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>                
+                    <label>Firework 4</label>
+                    <select id="firework" name="fireworkID4">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                    <label>Firework 5</label>
+                    <select id="firework" name="fireworkID5">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                    <label>Firework 6</label>
+                    <select id="firework" name="fireworkID6">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                    <label>Firework 7</label>
+                    <select id="firework" name="fireworkID7">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                    <label>Firework 8</label>
+                    <select id="firework" name="fireworkID8">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                    <label>Firework 9</label>
+                    <select id="firework" name="fireworkID9">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                    <label>Show Closer</label>
+                    <select id="firework" name="fireworkID10">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                <input type="submit">
+            </form>
 
-        <h2>BREAK</h2>
         <h2>Show Preview</h2>
-        <ul>
-            <% for (let i=0; i < userShows.length; i++) { %>
-                <% if (userShows[i].showName == "Gundam The Witch from Mercury" && userShows[i].fireworkID1 == 1) { %>
-                    <img src=/style/images/BluePinkYellow1.gif>
-                <% } %>
-            <% } %>
-        </ul>
-
-        <h2>BREAK</h2>
-        <h3>Add to show</h3>
-        <form action="/userShows/addFireworkToShow" method='POST'>
-                <label>My Shows</label>
-                <select id="Show Name" name="showName">
-                    <% for (let i=0; i< userShows.length; i++) { %> 
-                        <% if (userShows[i].fireworkID == 0) { %>
-                    <option><%= userShows[i].showName %></option>
-                        <% } %>
-                    <% } %>
-                </select>
-            <label>Fireworks</label>
-                <select id="firework" name="fireworkId">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-                <option>9</option>
-                <option>10</option>
-            </select>
-            <input type="submit">
-        </form> 
-
-        <h2>BREAK</h2>
-        <ul>
-            <% for (let i=0; i < userShows.length; i++) { %>
-                <% if (userShows[i].fireworkID == 1) { %>
-                    <img src=/style/images/BluePinkYellow1.gif>
-                <% } %>
-                <% if (userShows[i].fireworkID == 2) { %>
-                    <img src="/style/images/YellowRedBlue1.gif">
-                <% } %>
-            <% } %>
-        </ul>
-
-        <h2>BREAK</h2>
-        <ul>
-        <% userShows.forEach( el => { %>
+            <ul>
+            <% userShows.forEach( el => { %>
                 <li class='showName' data-id='<%=el._id%>'>
                     <span><%= el.showName %></span>
-                    <span><%= el.fireworkID1 %></span>
-                    <span><%= el.fireworkID2 %></span>
-                    <span><%= el.fireworkID3 %></span>
-                    <span><%= el.fireworkID4 %></span>
-                    <span><%= el.fireworkID5 %></span>
-                    <span><%= el.fireworkID6 %></span>
-                    <span><%= el.fireworkID7 %></span>
-                    <span><%= el.fireworkID8 %></span>
-                    <span><%= el.fireworkID9 %></span>
-                    <span><%= el.fireworkID10 %></span>
-                    <span class='del'> Delete </span>
+                    <span class="previewShow">Preview Show</span>
+                    <% }) %>
                 </li>
-        <% }) %>    
-        </ul>       
-
-        <h2>BREAK</h2>
-        <ul>
-            <% for (let i=0; i < userShows.length; i++) { %>
-                <% if (userShows[i].showName = userShows[i].showName) { %>
-                    <span><%= userShows[i].fireworkID %></span>
-                    <% } %>
-
-            <% } %>  
-        </ul>
+            </ul>
 
 
-        <h2>BREAK</h2>
-        <h3>Add to show</h3>
-        <form action="/userShows/getSingleShow" method='POST'>
-                <label>My Shows</label>
-                <select id="Show Name" name="showName">
-                    <% for (let i=0; i< userShows.length; i++) { %> 
-                    <option><%= userShows[i].showName %></option>
-                    <% } %>
-                </select>
-            <label>Fireworks</label>
-                <select id="firework" name="fireworkId">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-                <option>9</option>
-                <option>10</option>
-            </select>
-            <input type="submit">
-        </form> 
+        <h3>All Shows and Fireworks</h3>
+            <ul>
+            <% userShows.forEach( el => { %>
+                    <li class='showName' id="showName2" data-id='<%=el._id%>'>
+                        <span><%= el.showName %></span>
+            <!--1-->
+                        <span hidden="true"><%= el.fireworkID1 %></span>
+                            <% if (el.fireworkID1 == 1) { %>
+                                <span>Firework 1</span>
+                                <img src=/style/images/BluePinkYellow1.gif>
+                            <% } %>
+                            <% if (el.fireworkID1 == 2) { %>
+                                <span>Firework 1</span>
+                                <img src="/style/images/YellowRedBlue1.gif">
+                            <% } %>
+                            <% if (el.fireworkID1 == 3) { %>
+                                <span>Firework 1</span>
+                                <img src="/style/images/GreenBlue1.gif">
+                            <% } %>
+                            <% if (el.fireworkID1 == 4) { %>
+                                <span>Firework 1</span>
+                                <img src="/style/images/RedYellow1.gif">
+                            <% } %>
+                            <% if (el.fireworkID1 == 5) { %>
+                                <span>Firework 1</span>
+                                <img src="/style/images/GreenYellow1.gif">
+                            <% } %>
+                            <% if (el.fireworkID1 == 6) { %>
+                                <span>Firework 1</span>
+                                <img src="/style/images/WhiteYellow1.gif">
+                            <% } %>
+                            <% if (el.fireworkID1 == 7) { %>
+                                <span>Firework 1</span>
+                                <img src="/style/images/BlueYellowSaturn1.gif">
+                            <% } %>
+                            <% if (el.fireworkID1 == 8) { %>
+                                <span>Firework 1</span>
+                                <img src="/style/images/RedBlue1.gif">
+                            <% } %>
+                            <% if (el.fireworkID1 == 9) { %>
+                                <span>Firework 1</span>
+                                <img src="/style/images/GreenPink1.gif">
+                            <% } %>
+                            <% if (el.fireworkID1 == 10) { %>
+                                <span>Firework 2</span>
+                                <img src="/style/images/Finale.gif">
+                            <% } %>
+            <!--2-->
+                        <span hidden="true"><%= el.fireworkID2 %></span>
+                            <% if (el.fireworkID2 == 1) { %>
+                                <span>Firework 2</span>
+                                <img src=/style/images/BluePinkYellow1.gif>
+                            <% } %>
+                            <% if (el.fireworkID2 == 2) { %>
+                                <span>Firework 2</span>
+                                <img src="/style/images/YellowRedBlue1.gif">
+                            <% } %>
+                            <% if (el.fireworkID2 == 3) { %>
+                                <span>Firework 2</span>
+                                <img src="/style/images/GreenBlue1.gif">
+                            <% } %>
+                            <% if (el.fireworkID2 == 4) { %>
+                                <span>Firework 2</span>
+                                <img src="/style/images/RedYellow1.gif">
+                            <% } %>
+                            <% if (el.fireworkID2 == 5) { %>
+                                <span>Firework 2</span>
+                                <img src="/style/images/GreenYellow1.gif">
+                            <% } %>
+                            <% if (el.fireworkID2 == 6) { %>
+                                <span>Firework 2</span>
+                                <img src="/style/images/WhiteYellow1.gif">
+                            <% } %>
+                            <% if (el.fireworkID2 == 7) { %>
+                                <span>Firework 2</span>
+                                <img src="/style/images/BlueYellowSaturn1.gif">
+                            <% } %>
+                            <% if (el.fireworkID2 == 8) { %>
+                                <span>Firework 2</span>
+                                <img src="/style/images/RedBlue1.gif">
+                            <% } %>
+                            <% if (el.fireworkID2 == 9) { %>
+                                <span>Firework 2</span>
+                                <img src="/style/images/GreenPink1.gif">
+                            <% } %>
+                            <% if (el.fireworkID2 == 10) { %>
+                                <span>Firework 2</span>
+                                <img src="/style/images/Finale.gif">
+                            <% } %>
+            <!--3-->
+                        <span hidden="true"><%= el.fireworkID3 %></span>
+                            <% if (el.fireworkID3 == 1) { %>
+                                <span>Firework 3</span>
+                                <img src=/style/images/BluePinkYellow1.gif>
+                            <% } %>
+                            <% if (el.fireworkID3 == 2) { %>
+                                <span>Firework 3</span>
+                                <img src="/style/images/YellowRedBlue1.gif">
+                            <% } %>
+                            <% if (el.fireworkID3 == 3) { %>
+                                <span>Firework 3</span>
+                                <img src="/style/images/GreenBlue1.gif">
+                            <% } %>
+                            <% if (el.fireworkID3 == 4) { %>
+                                <span>Firework 3</span>
+                                <img src="/style/images/RedYellow1.gif">
+                            <% } %>
+                            <% if (el.fireworkID3 == 5) { %>
+                                <span>Firework 3</span>
+                                <img src="/style/images/GreenYellow1.gif">
+                            <% } %>
+                            <% if (el.fireworkID3 == 6) { %>
+                                <span>Firework 3</span>
+                                <img src="/style/images/WhiteYellow1.gif">
+                            <% } %>
+                            <% if (el.fireworkID3 == 7) { %>
+                                <span>Firework 3</span>
+                                <img src="/style/images/BlueYellowSaturn1.gif">
+                            <% } %>
+                            <% if (el.fireworkID3 == 8) { %>
+                                <span>Firework 3</span>
+                                <img src="/style/images/RedBlue1.gif">
+                            <% } %>
+                            <% if (el.fireworkID3 == 9) { %>
+                                <span>Firework 3</span>
+                                <img src="/style/images/GreenPink1.gif">
+                            <% } %>
+                            <% if (el.fireworkID3 == 10) { %>
+                                <span>Firework 3</span>
+                                <img src="/style/images/Finale.gif">
+                            <% } %>
+
+                        <span hidden="true"><%= el.fireworkID4 %></span>
+                            <% if (el.fireworkID4 == 1) { %>
+                                <span>Firework 4</span>
+                                <img src=/style/images/BluePinkYellow1.gif>
+                            <% } %>
+                            <% if (el.fireworkID4 == 2) { %>
+                                <span>Firework 4</span>
+                                <img src="/style/images/YellowRedBlue1.gif">
+                            <% } %>
+                            <% if (el.fireworkID4 == 3) { %>
+                                <span>Firework 4</span>
+                                <img src="/style/images/GreenBlue1.gif">
+                            <% } %>
+                            <% if (el.fireworkID4 == 4) { %>
+                                <span>Firework 4</span>
+                                <img src="/style/images/RedYellow1.gif">
+                            <% } %>
+                            <% if (el.fireworkID4 == 5) { %>
+                                <span>Firework 4</span>
+                                <img src="/style/images/GreenYellow1.gif">
+                            <% } %>
+                            <% if (el.fireworkID4 == 6) { %>
+                                <span>Firework 4</span>
+                                <img src="/style/images/WhiteYellow1.gif">
+                            <% } %>
+                            <% if (el.fireworkID4 == 7) { %>
+                                <span>Firework 4</span>
+                                <img src="/style/images/BlueYellowSaturn1.gif">
+                            <% } %>
+                            <% if (el.fireworkID4 == 8) { %>
+                                <span>Firework 4</span>
+                                <img src="/style/images/RedBlue1.gif">
+                            <% } %>
+                            <% if (el.fireworkID4 == 9) { %>
+                                <span>Firework 4</span>
+                                <img src="/style/images/GreenPink1.gif">
+                            <% } %>
+                            <% if (el.fireworkID4 == 10) { %>
+                                <span>Firework 4</span>
+                                <img src="/style/images/Finale.gif">
+                            <% } %>
+
+                        <span hidden="true"><%= el.fireworkID5 %></span>
+                            <% if (el.fireworkID5 == 1) { %>
+                                <span>Firework 5</span>
+                                <img src=/style/images/BluePinkYellow1.gif>
+                            <% } %>
+                            <% if (el.fireworkID5 == 2) { %>
+                                <span>Firework 5</span>
+                                <img src="/style/images/YellowRedBlue1.gif">
+                            <% } %>
+                            <% if (el.fireworkID5 == 3) { %>
+                                <span>Firework 5</span>
+                                <img src="/style/images/GreenBlue1.gif">
+                            <% } %>
+                            <% if (el.fireworkID5 == 4) { %>
+                                <span>Firework 5</span>
+                                <img src="/style/images/RedYellow1.gif">
+                            <% } %>
+                            <% if (el.fireworkID5 == 5) { %>
+                                <span>Firework 5</span>
+                                <img src="/style/images/GreenYellow1.gif">
+                            <% } %>
+                            <% if (el.fireworkID5 == 6) { %>
+                                <span>Firework 5</span>
+                                <img src="/style/images/WhiteYellow1.gif">
+                            <% } %>
+                            <% if (el.fireworkID5 == 7) { %>
+                                <span>Firework 5</span>
+                                <img src="/style/images/BlueYellowSaturn1.gif">
+                            <% } %>
+                            <% if (el.fireworkID5 == 8) { %>
+                                <span>Firework 5</span>
+                                <img src="/style/images/RedBlue1.gif">
+                            <% } %>
+                            <% if (el.fireworkID5 == 9) { %>
+                                <span>Firework 5</span>
+                                <img src="/style/images/GreenPink1.gif">
+                            <% } %>
+                            <% if (el.fireworkID5 == 10) { %>
+                                <span>Firework 5</span>
+                                <img src="/style/images/Finale.gif">
+                            <% } %>
+
+                        <span hidden="true"><%= el.fireworkID6 %></span>
+                            <% if (el.fireworkID6 == 1) { %>
+                                <span>Firework 6</span>
+                                <img src=/style/images/BluePinkYellow1.gif>
+                            <% } %>
+                            <% if (el.fireworkID6 == 2) { %>
+                                <span>Firework 6</span>
+                                <img src="/style/images/YellowRedBlue1.gif">
+                            <% } %>
+                            <% if (el.fireworkID6 == 3) { %>
+                                <span>Firework 6</span>
+                                <img src="/style/images/GreenBlue1.gif">
+                            <% } %>
+                            <% if (el.fireworkID6 == 4) { %>
+                                <span>Firework 6</span>
+                                <img src="/style/images/RedYellow1.gif">
+                            <% } %>
+                            <% if (el.fireworkID6 == 5) { %>
+                                <span>Firework 6</span>
+                                <img src="/style/images/GreenYellow1.gif">
+                            <% } %>
+                            <% if (el.fireworkID6 == 6) { %>
+                                <span>Firework 6</span>
+                                <img src="/style/images/WhiteYellow1.gif">
+                            <% } %>
+                            <% if (el.fireworkID6 == 7) { %>
+                                <span>Firework 6</span>
+                                <img src="/style/images/BlueYellowSaturn1.gif">
+                            <% } %>
+                            <% if (el.fireworkID6 == 8) { %>
+                                <span>Firework 6</span>
+                                <img src="/style/images/RedBlue1.gif">
+                            <% } %>
+                            <% if (el.fireworkID6 == 9) { %>
+                                <span>Firework 6</span>
+                                <img src="/style/images/GreenPink1.gif">
+                            <% } %>
+                            <% if (el.fireworkID6 == 10) { %>
+                                <span>Firework 6</span>
+                                <img src="/style/images/Finale.gif">
+                            <% } %>
+
+                        <span hidden="true"><%= el.fireworkID7 %></span>
+                            <% if (el.fireworkID7 == 1) { %>
+                                <span>Firework 7</span>
+                                <img src=/style/images/BluePinkYellow1.gif>
+                            <% } %>
+                            <% if (el.fireworkID7 == 2) { %>
+                                <span>Firework 7</span>
+                                <img src="/style/images/YellowRedBlue1.gif">
+                            <% } %>
+                            <% if (el.fireworkID7 == 3) { %>
+                                <span>Firework 7</span>
+                                <img src="/style/images/GreenBlue1.gif">
+                            <% } %>
+                            <% if (el.fireworkID7 == 4) { %>
+                                <span>Firework 7</span>
+                                <img src="/style/images/RedYellow1.gif">
+                            <% } %>
+                            <% if (el.fireworkID7 == 5) { %>
+                                <span>Firework 7</span>
+                                <img src="/style/images/GreenYellow1.gif">
+                            <% } %>
+                            <% if (el.fireworkID7 == 6) { %>
+                                <span>Firework 7</span>
+                                <img src="/style/images/WhiteYellow1.gif">
+                            <% } %>
+                            <% if (el.fireworkID7 == 7) { %>
+                                <span>Firework 7</span>
+                                <img src="/style/images/BlueYellowSaturn1.gif">
+                            <% } %>
+                            <% if (el.fireworkID7 == 8) { %>
+                                <span>Firework 7</span>
+                                <img src="/style/images/RedBlue1.gif">
+                            <% } %>
+                            <% if (el.fireworkID7 == 9) { %>
+                                <span>Firework 7</span>
+                                <img src="/style/images/GreenPink1.gif">
+                            <% } %>
+                            <% if (el.fireworkID7 == 10) { %>
+                                <span>Firework 7</span>
+                                <img src="/style/images/Finale.gif">
+                            <% } %>
+
+                        <span hidden="true"><%= el.fireworkID8 %></span>
+                            <% if (el.fireworkID8 == 1) { %>
+                                <span>Firework 8</span>
+                                <img src=/style/images/BluePinkYellow1.gif>
+                            <% } %>
+                            <% if (el.fireworkID8 == 2) { %>
+                                <span>Firework 8</span>
+                                <img src="/style/images/YellowRedBlue1.gif">
+                            <% } %>
+                            <% if (el.fireworkID8 == 3) { %>
+                                <span>Firework 8</span>
+                                <img src="/style/images/GreenBlue1.gif">
+                            <% } %>
+                            <% if (el.fireworkID8 == 4) { %>
+                                <span>Firework 8</span>
+                                <img src="/style/images/RedYellow1.gif">
+                            <% } %>
+                            <% if (el.fireworkID8 == 5) { %>
+                                <span>Firework 8</span>
+                                <img src="/style/images/GreenYellow1.gif">
+                            <% } %>
+                            <% if (el.fireworkID8 == 6) { %>
+                                <span>Firework 8</span>
+                                <img src="/style/images/WhiteYellow1.gif">
+                            <% } %>
+                            <% if (el.fireworkID8 == 7) { %>
+                                <span>Firework 8</span>
+                                <img src="/style/images/BlueYellowSaturn1.gif">
+                            <% } %>
+                            <% if (el.fireworkID8 == 8) { %>
+                                <span>Firework 8</span>
+                                <img src="/style/images/RedBlue1.gif">
+                            <% } %>
+                            <% if (el.fireworkID8 == 9) { %>
+                                <span>Firework 8</span>
+                                <img src="/style/images/GreenPink1.gif">
+                            <% } %>
+                            <% if (el.fireworkID8 == 10) { %>
+                                <span>Firework 8</span>
+                                <img src="/style/images/Finale.gif">
+                            <% } %>
+                            
+                        <span hidden="true"><%= el.fireworkID9 %></span>
+                            <% if (el.fireworkID9 == 1) { %>
+                                <span>Firework 9</span>
+                                <img src=/style/images/BluePinkYellow1.gif>
+                            <% } %>
+                            <% if (el.fireworkID9 == 2) { %>
+                                <span>Firework 9</span>
+                                <img src="/style/images/YellowRedBlue1.gif">
+                            <% } %>
+                            <% if (el.fireworkID9 == 3) { %>
+                                <span>Firework 9</span>
+                                <img src="/style/images/GreenBlue1.gif">
+                            <% } %>
+                            <% if (el.fireworkID9 == 4) { %>
+                                <span>Firework 9</span>
+                                <img src="/style/images/RedYellow1.gif">
+                            <% } %>
+                            <% if (el.fireworkID9 == 5) { %>
+                                <span>Firework 9</span>
+                                <img src="/style/images/GreenYellow1.gif">
+                            <% } %>
+                            <% if (el.fireworkID9 == 6) { %>
+                                <span>Firework 9</span>
+                                <img src="/style/images/WhiteYellow1.gif">
+                            <% } %>
+                            <% if (el.fireworkID9 == 7) { %>
+                                <span>Firework92</span>
+                                <img src="/style/images/BlueYellowSaturn1.gif">
+                            <% } %>
+                            <% if (el.fireworkID9 == 8) { %>
+                                <span>Firework 9</span>
+                                <img src="/style/images/RedBlue1.gif">
+                            <% } %>
+                            <% if (el.fireworkID9 == 9) { %>
+                                <span>Firework 9</span>
+                                <img src="/style/images/GreenPink1.gif">
+                            <% } %>
+                            <% if (el.fireworkID9 == 10) { %>
+                                <span>Firework 9</span>
+                                <img src="/style/images/Finale.gif">
+                            <% } %>
+
+                        <span hidden="true"><%= el.fireworkID10 %></span>
+                            <% if (el.fireworkID10 == 1) { %>
+                                <span>Firework 10</span>
+                                <img src=/style/images/BluePinkYellow1.gif>
+                            <% } %>
+                            <% if (el.fireworkID10 == 2) { %>
+                                <span>Firework 10</span>
+                                <img src="/style/images/YellowRedBlue1.gif">
+                            <% } %>
+                            <% if (el.fireworkID10 == 3) { %>
+                                <span>Firework 10</span>
+                                <img src="/style/images/GreenBlue1.gif">
+                            <% } %>
+                            <% if (el.fireworkID10 == 4) { %>
+                                <span>Firework 10</span>
+                                <img src="/style/images/RedYellow1.gif">
+                            <% } %>
+                            <% if (el.fireworkID10 == 5) { %>
+                                <span>Firework 10</span>
+                                <img src="/style/images/GreenYellow1.gif">
+                            <% } %>
+                            <% if (el.fireworkID10 == 6) { %>
+                                <span>Firework 10</span>
+                                <img src="/style/images/WhiteYellow1.gif">
+                            <% } %>
+                            <% if (el.fireworkID10 == 7) { %>
+                                <span>Firework 10</span>
+                                <img src="/style/images/BlueYellowSaturn1.gif">
+                            <% } %>
+                            <% if (el.fireworkID10 == 8) { %>
+                                <span>Firework 10</span>
+                                <img src="/style/images/RedBlue1.gif">
+                            <% } %>
+                            <% if (el.fireworkID10 == 9) { %>
+                                <span>Firework 10</span>
+                                <img src="/style/images/GreenPink1.gif">
+                            <% } %>
+                            <% if (el.fireworkID10 == 10) { %>
+                                <span>Firework 10</span>
+                                <img src="/style/images/Finale.gif">
+                            <% } %>
+                        <span class='del'> Delete Entire Show</span>
+                    </li>
+            <% }) %>    
+            </ul>       
+
         <script src="js/main.js"></script>
     </body>
 </html>

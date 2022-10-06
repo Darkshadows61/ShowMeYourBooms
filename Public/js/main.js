@@ -3,6 +3,7 @@
 const deleteBtn = document.querySelectorAll('.del')
 const todoItem = document.querySelectorAll('span.not')
 const todoComplete = document.querySelectorAll('span.completed')
+const previewShowBtn = document.querySelectorAll('span.previewShow')
 
 Array.from(deleteBtn).forEach((el)=>{
     el.addEventListener('click', deleteUserShow)
@@ -15,6 +16,16 @@ Array.from(todoItem).forEach((el)=>{
 Array.from(todoComplete).forEach((el)=>{
     el.addEventListener('click', markIncomplete)
 })
+
+Array.from(previewShowBtn).forEach((el)=>{
+    el.addEventListener('click', previewSingleShow)
+})
+
+async function previewSingleShow(){
+    const singleShowId = this.parentNode.dataset.id
+    console.log(singleShowId)
+    document.getElementById("showName2").hidden = false
+}
 
 async function deleteTodo(){
     const todoId = this.parentNode.dataset.id
