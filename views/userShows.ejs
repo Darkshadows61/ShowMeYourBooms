@@ -30,8 +30,28 @@
         <h2>BREAK</h2>
         <form action="/userShows/createUserShow" method='POST'>
             <input type="text" placeholder="Show Name" name='showName'>
+            <input type="text" placeholder="Opener" name='fireworkID1'>
+            <input type="text" placeholder="Firework 2" name='fireworkID2'>
+            <input type="text" placeholder="Firework 3" name='fireworkID3'>
+            <input type="text" placeholder="Firework 4" name='fireworkID4'>
+            <input type="text" placeholder="Firework 5" name='fireworkID5'>
+            <input type="text" placeholder="Firework 6" name='fireworkID6'>
+            <input type="text" placeholder="Firework 7" name='fireworkID7'>
+            <input type="text" placeholder="Firework 8" name='fireworkID8'>
+            <input type="text" placeholder="Firework 9" name='fireworkID9'>
+            <input type="text" placeholder="Closer" name='fireworkID10'>
             <input type="submit">
         </form>
+
+        <h2>BREAK</h2>
+        <h2>Show Preview</h2>
+        <ul>
+            <% for (let i=0; i < userShows.length; i++) { %>
+                <% if (userShows[i].showName == "Gundam The Witch from Mercury" && userShows[i].fireworkID1 == 1) { %>
+                    <img src=/style/images/BluePinkYellow1.gif>
+                <% } %>
+            <% } %>
+        </ul>
 
         <h2>BREAK</h2>
         <h3>Add to show</h3>
@@ -77,7 +97,16 @@
         <% userShows.forEach( el => { %>
                 <li class='showName' data-id='<%=el._id%>'>
                     <span><%= el.showName %></span>
-                    <span><%= el.fireworkID %></span>
+                    <span><%= el.fireworkID1 %></span>
+                    <span><%= el.fireworkID2 %></span>
+                    <span><%= el.fireworkID3 %></span>
+                    <span><%= el.fireworkID4 %></span>
+                    <span><%= el.fireworkID5 %></span>
+                    <span><%= el.fireworkID6 %></span>
+                    <span><%= el.fireworkID7 %></span>
+                    <span><%= el.fireworkID8 %></span>
+                    <span><%= el.fireworkID9 %></span>
+                    <span><%= el.fireworkID10 %></span>
                     <span class='del'> Delete </span>
                 </li>
         <% }) %>    
@@ -94,6 +123,30 @@
         </ul>
 
 
+        <h2>BREAK</h2>
+        <h3>Add to show</h3>
+        <form action="/userShows/getSingleShow" method='POST'>
+                <label>My Shows</label>
+                <select id="Show Name" name="showName">
+                    <% for (let i=0; i< userShows.length; i++) { %> 
+                    <option><%= userShows[i].showName %></option>
+                    <% } %>
+                </select>
+            <label>Fireworks</label>
+                <select id="firework" name="fireworkId">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+            </select>
+            <input type="submit">
+        </form> 
         <script src="js/main.js"></script>
     </body>
 </html>
